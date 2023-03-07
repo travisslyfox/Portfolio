@@ -26,17 +26,23 @@ jobs:
           node-version: 16
       - run: npm ci
       - run: npm test
-      
-  deploy:
-      name: Deploy
-      needs: build
-      runs-on: ubuntu-latest
-      if: github.ref == 'refs/heads/main'
-
-      steps:
       - run: ls
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+      
+#   deploy:
+#       name: Deploy
+#       needs: build
+#       runs-on: ubuntu-latest
+#       if: github.ref == 'refs/heads/main'
+
+#       steps:
+#       - run: ls
+#       - name: Deploy to gh-pages
+#         uses: peaceiris/actions-gh-pages@v3
+#         with:
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
 #           publish_dir: ./build
