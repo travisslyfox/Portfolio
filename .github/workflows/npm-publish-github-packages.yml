@@ -11,6 +11,10 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
+      
+defaults: 
+  run: 
+    working-directory: ClientApp
 
 jobs:
   build:
@@ -20,8 +24,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: cd ClientApp
-      - run: ls
       - run: npm ci
       - run: npm test
 
