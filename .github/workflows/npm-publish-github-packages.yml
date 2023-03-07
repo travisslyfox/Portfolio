@@ -16,6 +16,9 @@ defaults:
   run: 
     working-directory: ClientApp
 
+env:
+  CI: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
