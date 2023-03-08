@@ -1,20 +1,17 @@
-# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
-# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
-
-name: Github Pages Deployment
+name: GitHub Pages Deployment
 
 on:
   push:
     branches:
-      - main
+      - github
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
-      - main
-      
-defaults: 
-  run: 
-    working-directory: ClientApp
+      - github
+
+# defaults:
+#   run:
+#     working-directory: ClientApp
 
 env:
   CI: false
@@ -36,7 +33,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
-      
 #   deploy:
 #       name: Deploy
 #       needs: build
