@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.text-header { font-size: 10em; text-shadow: -1px 9px 0 #000 }
+
+.text-loud { font-size: 5em }
+
+.text-body { font-size: 3em }
+
+.text-quiet { font-size: 2em }
+
+.text-white-custom { color: #dbd9d9; text-shadow: -1px 2px 0 #000 }
+
+.background-blue { background-color: #0d1640 }
