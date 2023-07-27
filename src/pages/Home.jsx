@@ -8,7 +8,7 @@ function Home() {
 			<h1 className="text-header">Travis Fox</h1>
 			<h2>I am a software engineer</h2>
 			<h4>I make websites</h4>
-			<h6>Like the one you are on</h6>
+			<h6>Like the one you are on!</h6>
 			<Profile />
 		</div>
 	);
