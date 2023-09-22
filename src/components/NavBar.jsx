@@ -12,7 +12,7 @@ function NavBar() {
 	const [show, setShow] = useState(false);
 
 	return (
-		<div style={{ marginBottom: 100 }}>
+		<div>
 			<Navbar bg="#0d1640" expand="lg">
 				<Container>
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -34,6 +34,7 @@ function NavBar() {
 							variant="primary"
 							style={{ backgroundColor: "transparent" }}
 							onClick={() => setShow(!show)}
+							className="highlight"
 						>
 							Resume
 						</Button>

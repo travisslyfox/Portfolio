@@ -1,14 +1,10 @@
 import React from "react";
 import profilePic from "../photos/profile.jpeg";
 
-function Profile() {
+function Profile({ styleProps }) {
 	return (
 		<div>
-			<img
-				src={profilePic}
-				alt="logo"
-				style={{ maxWidth: 200, maxHeight: 400 }}
-			/>
+			<img src={profilePic} alt="logo" style={styleProps} />
 		</div>
 	);
 }

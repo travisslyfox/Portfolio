@@ -16,11 +16,7 @@ function App() {
     <div>
       <Navbar/>
 
-      <div style={{minWidth: "33%", float: "left"}}>
-        <h1 style={{visibility: "hidden"}}>block</h1>
-      </div>
-
-      <div style={{width: "33%", float: "left"}} className="background-blue text-white-custom">
+      <div className="background-blue text-white-custom main">
         <Router>
 
             <Routes>
@@ -31,8 +27,6 @@ function App() {
 
         </Router>
       </div>
-
-      <div style={{width: "33%", float: "left"}}/>
 
       <Footer/>
     </div>
