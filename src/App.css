@@ -11,20 +11,19 @@
 }
 @media (min-width: 769px) {
   .main{ margin-top: 5%; width: 65%; float: left; margin-left: 15%}
-  /* .home-content{margin-left: 7%;} */
 }
 
 @keyframes lightUp {
   0% {
-    background-color: #0d1640; /* Initial background color */
+    background-color: #0d1640;
   }
-  50% {/* Change to a light-up color */
+  50% {
     color: #ff5e00;
     border-color: #ff5e00;
     transform: scale(1.2);
   }
   100% {
-    background-color: #0d1640; /* Return to the initial color */
+    background-color: #0d1640;
   }
 }
 
@@ -34,6 +33,16 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    margin-top: -100px;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -62,15 +71,15 @@
 }
 
 
-/* Apply the animation to the target element */
 .highlight {
   animation: lightUp 2s;
-  animation-iteration-count: 4; /* Adjust the duration and other properties as needed */
+}
+
+.fade-in{ 
+  animation: fade-in 3s; 
 }
 
 .text-header { margin-bottom: 60px; font-size: 8em; text-shadow: -1px 9px 0 #000 }
-
-/* .text-header { font-size: 10em; text-shadow: -1px 9px 0 #000 } */
 
 .text-loud { font-size: 5em }
 
