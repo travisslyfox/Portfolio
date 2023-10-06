@@ -21,10 +21,10 @@ function NavBar() {
 							<Nav.Link href="/" className="text-white">
 								Home
 							</Nav.Link>
-							<Nav.Link href="about" className="text-white">
+							<Nav.Link href="about" className="text-white" style={{ visibility: "hidden" }}>
 								About
 							</Nav.Link>
-							<Nav.Link href="contact" className="text-white">
+							<Nav.Link href="contact" className="text-white" style={{ visibility: "hidden" }}>
 								Contact
 							</Nav.Link>
 						</Nav>
