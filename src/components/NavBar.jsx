@@ -12,7 +12,7 @@ function NavBar() {
 	const [show, setShow] = useState(false);
 
 	return (
-		<div>
+		<div style={{ paddingBottom: "50px" }}>
 			<Navbar bg="#0d1640" expand="lg">
 				<Container>
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -21,10 +21,18 @@ function NavBar() {
 							<Nav.Link href="/" className="text-white">
 								Home
 							</Nav.Link>
-							<Nav.Link href="about" className="text-white">
+							<Nav.Link
+								href="about"
+								className="text-white"
+								style={{ visibility: "hidden" }}
+							>
 								About
 							</Nav.Link>
-							<Nav.Link href="contact" className="text-white">
+							<Nav.Link
+								href="contact"
+								className="text-white"
+								style={{ visibility: "hidden" }}
+							>
 								Contact
 							</Nav.Link>
 						</Nav>

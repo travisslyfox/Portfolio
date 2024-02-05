@@ -10,7 +10,7 @@
   .main{ margin-top: 10%; margin-left: 5%; margin-right: 5%}
 }
 @media (min-width: 769px) {
-  .main{ margin-top: 5%; width: 65%; float: left; margin-left: 15%}
+  .main{ margin-top: 5%; width: 73%; float: left; margin-left: 10%; margin-right: 10%} /*going past 73% width bugs card, causing height to be reset on animation, ideal styling would be ~ 78%*/
 }
 
 @keyframes lightUp {
@@ -18,8 +18,6 @@
     background-color: #0d1640;
   }
   50% {
-    color: #ff5e00;
-    border-color: #ff5e00;
     transform: scale(1.2);
   }
   100% {
@@ -46,6 +44,7 @@
   }
 }
 
+
 .App {
   text-align: center;
 }
@@ -69,7 +68,6 @@
 .App-link {
   color: #61dafb;
 }
-
 
 .highlight {
   animation: lightUp 2s;

@@ -63,6 +63,7 @@ function Home() {
 				<div className="col-xl-5 col-lg-6 col-md-7">
 					<Profile styleProps={profileStyles} />
 				</div>
+
 				<div className="about-para col-xl-7 col-lg-6 col-md-5 fs-5">
 					<div
 						style={{
