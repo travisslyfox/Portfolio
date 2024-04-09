@@ -18,7 +18,7 @@ function App() {
     <div>
       <Navbar/>
 
-      <Card style={{minHeight: "775px", marginLeft: "18%", marginRight: "18%", marginBottom: "20px", background: "#181a1b"}}>
+      <Card className="home-card">
       
         <div className="text-white-custom main">
           <Router>

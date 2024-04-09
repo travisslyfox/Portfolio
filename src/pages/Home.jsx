@@ -60,7 +60,7 @@ function Home() {
 				<h1 style={fadeInStyles} className="text-header col-12">
 					Travis Fox
 				</h1>
-				<div className="col-xl-5 col-lg-6 col-md-7">
+				<div className="col-xl-5 col-lg-6 col-md-7 conditional-hidden">
 					<Profile styleProps={profileStyles} />
 				</div>
 

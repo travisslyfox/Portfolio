@@ -8,10 +8,26 @@
 }
 @media (max-width: 768px) {
   .main{ margin-top: 10%; margin-left: 5%; margin-right: 5%}
+  .conditional-hidden{ display: none}
+  .home-card {
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 15px;
+    background-color: #181a1b !important;
+  }
 }
 @media (min-width: 769px) {
   .main{ margin-top: 5%; width: 73%; float: left; margin-left: 10%; margin-right: 10%} /*going past 73% width bugs card, causing height to be reset on animation, ideal styling would be ~ 78%*/
+  .home-card {
+    min-height: 775px;
+    margin-left: 18%;
+    margin-right: 18%;
+    margin-bottom: 20px;
+    background-color: #181a1b !important;
+  }
 }
+
+
 
 @keyframes lightUp {
   0% {
@@ -68,6 +84,7 @@
 .App-link {
   color: #61dafb;
 }
+
 
 .highlight {
   animation: lightUp 2s;

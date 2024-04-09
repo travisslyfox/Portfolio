@@ -52,7 +52,7 @@ function NavBar() {
 
 			{/* refactor to callback */}
 			<Modal show={show} onHide={() => setShow(!show)}>
-				<Modal.Body>
+				<Modal.Body style={{ textAlign: "center" }}>
 					<Resume />
 					<a href={Pdf}>PDF/Download</a>
 				</Modal.Body>
