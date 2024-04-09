@@ -13,7 +13,7 @@ function NavBar() {
 
 	return (
 		<div style={{ paddingBottom: "50px" }}>
-			<Navbar bg="#0d1640" expand="lg">
+			<Navbar bg="#0d1640" /*expand="lg" //mobile navbar hamburger menue*/>
 				<Container>
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
 					<Navbar.Collapse id="basic-navbar-nav">
