@@ -7,114 +7,129 @@ const profileStyles = {
 	border: "1px solid black",
 	borderRadius: "150px",
 	marginBottom: "20px",
-	animation: "fade-in 3s",
-	animationIterationCount: "1",
-};
-const fadeInStyles = {
-	animation: "fade-in 3s",
 };
 
 function Home() {
-	const [textVisibility, setTextVisibility] = useState({
-		paraOne: "hidden",
-		paraTwo: "hidden",
-		paraThree: "hidden",
-		paraFour: "hidden",
+	const [techStack, setTechStack] = useState({
+		displayText: "",
+		bank: [
+			"JavaScript developer.",
+			"C# developer.",
+			"SQL developer.",
+			"React developer.",
+			".NET developer.",
+			"Tech enthusiast.",
+		],
+		charIndex: 0,
+		techIndex: 0,
+		isDeleting: false,
 	});
 
 	useEffect(() => {
-		setTimeout(() => {
-			setTextVisibility((prevState) => {
-				const ud = { ...prevState };
-				ud.paraOne = "visible";
-				return ud;
+		let timer;
+
+		const currentTech = techStack.bank[techStack.techIndex];
+
+		if (!techStack.isDeleting && techStack.charIndex < currentTech.length) {
+			timer = setTimeout(() => {
+				setTechStack((prevState) => {
+					const ts = { ...prevState };
+					ts.displayText = ts.displayText + currentTech[techStack.charIndex];
+					ts.charIndex = ts.charIndex + 1;
+					return ts;
+				});
+			}, 80);
+		} else if (techStack.charIndex === currentTech.length) {
+			setTechStack((prevState) => {
+				const ts = { ...prevState };
+				ts.isDeleting = true;
+				return ts;
 			});
-		}, 3200);
-		setTimeout(() => {
-			setTextVisibility((prevState) => {
-				const ud = { ...prevState };
-				ud.paraTwo = "visible";
-				return ud;
+			setTimeout(() => {
+				setTechStack((prevState) => {
+					const ts = { ...prevState };
+					ts.displayText = ts.displayText.slice(0, -1);
+					ts.charIndex = ts.charIndex - 1;
+					return ts;
+				});
+			}, 2000);
+		} else if (techStack.isDeleting && techStack.charIndex > 0) {
+			timer = setTimeout(() => {
+				setTechStack((prevState) => {
+					const ts = { ...prevState };
+					ts.displayText = ts.displayText.slice(0, -1);
+					ts.charIndex = ts.charIndex - 1;
+					return ts;
+				});
+			}, 80);
+		} else if (techStack.isDeleting && techStack.charIndex === 0) {
+			setTechStack((prevState) => {
+				const ts = { ...prevState };
+				ts.isDeleting = false;
+				ts.techIndex = (ts.techIndex + 1) % techStack.bank.length;
+				return ts;
 			});
-		}, 5200);
-		setTimeout(() => {
-			setTextVisibility((prevState) => {
-				const ud = { ...prevState };
-				ud.paraThree = "visible";
-				return ud;
-			});
-		}, 7200);
-		setTimeout(() => {
-			setTextVisibility((prevState) => {
-				const ud = { ...prevState };
-				ud.paraFour = "visible";
-				return ud;
-			});
-		}, 9200);
-	}, []);
+		}
+
+		return () => {
+			clearTimeout(timer);
+		};
+	}, [
+		techStack.charIndex,
+		techStack.isDeleting,
+		techStack.bank,
+		techStack.techIndex,
+	]);
 
 	return (
 		<div>
 			<div className="home-content row row-cols-auto mb-5">
-				<h4 style={fadeInStyles}>Hello, my name is</h4>
-				<h1 style={fadeInStyles} className="text-header col-12">
-					Travis Fox
-				</h1>
-				<div className="col-xl-5 col-lg-6 col-md-7 conditional-hidden">
-					<Profile styleProps={profileStyles} />
+				<div className="container">
+					<div>
+						<h4>Hello, my name is</h4>
+						<h1 className="text-header col-12">Travis Fox</h1>
+						<div className="mt-3">
+							<h4>
+								I am {techStack.displayText}
+								<span className="text-blinking">_</span>
+							</h4>
+						</div>
+					</div>
+					<div style={{ marginTop: "100%" }}>{/* <h1>TECH ICONS</h1> */}</div>
 				</div>
 
-				<div className="about-para col-xl-7 col-lg-6 col-md-5 fs-5">
-					<div
-						style={{
-							...fadeInStyles,
-							animationDelay: "3s",
-							visibility: textVisibility.paraOne,
-						}}
-						className=""
-					>
-						I am a Software Developer proficient in the C#/.Net stack that
-						specializes in Web Development. I am experienced with working on SQL
+				<div className="about-para col-xl-1 col-lg-1 col-md-1 fs-1"></div>
+
+				<div
+					className="about-para col-xl-6 col-lg-5 col-md-4"
+					style={{ fontSize: "large" }}
+				>
+					<div className="mt-3">
+						I come from a family of software developers. My sister is currently
+						studying computer science, my brother is employed as a software
+						developer, and my father wrote the book on .NET (
+						<a href="https://www.oreilly.com/library/view/debugging-aspnet/0735711410/">
+							literally
+						</a>
+						)! I followed suit and am now a full-stack developer myself.
+					</div>
+					<div className="mt-3">
+						I specializes in Web Development and have experience working on SQL
 						databases, REST API's backed by C#/.Net Core, and front-end
-						development using React.
+						development using React. I am Currently working on a project that
+						uses Azure Static Web Apps, GitHub Deployment, and Azure Cosmos DB.
+						In fact this site is currently being hosted using Azure and code
+						checkin is handled with GitHub Actions.
 					</div>
-					<div
-						style={{
-							...fadeInStyles,
-							animationDelay: "5s",
-							visibility: textVisibility.paraTwo,
-						}}
-						className="mt-3"
-					>
-						Currently working on a project that uses Azure Static Web Apps,
-						GitHub Deployment, and Azure Cosmos DB. In fact this site is
-						currently being hosted using Azure and code checkin is handled with
-						GitHub Actions.
-					</div>
-					<div
-						style={{
-							...fadeInStyles,
-							animationDelay: "7s",
-							visibility: textVisibility.paraThree,
-						}}
-						className="mt-3"
-					>
-						I'm also familiar with the Agile methodology and have worked in a
+					<div className="mt-3">
+						I'm also familiar with the Agile methodology and have working in a
 						Scrum environment. I am a quick learner and am always looking to
-						learn new technologies and improve my skills. I am also a team
-						player and enjoy working with others to solve problems and create
-						solutions.
+						learn new technologies and improve my skills. I am a team player and
+						enjoy working with others to solve problems and create solutions.
 					</div>
-					<div
-						style={{
-							...fadeInStyles,
-							animationDelay: "9s",
-							visibility: textVisibility.paraFour,
-						}}
-						className="mt-5"
-					>
-						I am currently looking for a full-time position as a Software
-						Developer, although I am open and currently freelancing.
+					<div className="mt-3">
+						When I am not working I am most likely still at the computer either
+						reading, playing video games, or hanging out with my cats.
 					</div>
 				</div>
 			</div>

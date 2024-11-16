@@ -12,15 +12,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
-  document.body.style = 'background: hsl(38.57deg 20.59% 13.33%)';
+  document.body.style = 'background: hsl(224deg 47.8% 11%)';
 
   return (
     <div>
-      <Navbar/>
+      {/* <Navbar/> */}
 
-      <Card className="home-card">
+
       
-        <div className="text-white-custom main">
+      <div className="text-white-custom main" sytle={{}}>
           <Router>
 
               <Routes>
@@ -33,7 +33,7 @@ function App() {
           </Router>
         </div>
 
-      </Card>
+
 
       <Footer/>
     </div>

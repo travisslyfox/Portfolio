@@ -13,13 +13,17 @@ function NavBar() {
 
 	return (
 		<div style={{ paddingBottom: "50px" }}>
-			<Navbar bg="#0d1640" /*expand="lg" //mobile navbar hamburger menue*/>
+			<Navbar /*expand="lg" //mobile navbar hamburger menue*/>
 				<Container>
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
 					<Navbar.Collapse id="basic-navbar-nav">
 						<Nav className="me-auto">
-							<Nav.Link href="/" className="text-white">
-								Home
+							<Nav.Link
+								href="/"
+								className="text-white"
+								style={{ fontWeight: "bold", fontSize: "18px" }}
+							>
+								Travis Fox
 							</Nav.Link>
 							<Nav.Link
 								href="about"

@@ -17,7 +17,7 @@
   }
 }
 @media (min-width: 769px) {
-  .main{ margin-top: 5%; width: 73%; float: left; margin-left: 10%; margin-right: 10%} /*going past 73% width bugs card, causing height to be reset on animation, ideal styling would be ~ 78%*/
+  .main{ margin-top: 5%; width: auto; float: left; margin-left: 18%; margin-right: 18%} 
   .home-card {
     min-height: 775px;
     margin-left: 18%;
@@ -60,6 +60,13 @@
   }
 }
 
+@keyframes text-blinking{
+  50%  {
+    opacity: 0;
+  }
+
+}
+
 
 .App {
   text-align: center;
@@ -94,7 +101,11 @@
   animation: fade-in 3s; 
 }
 
-.text-header { margin-bottom: 60px; font-size: 8em; text-shadow: -1px 9px 0 #000 }
+.text-blinking { 
+  animation: text-blinking 1s linear infinite;
+ }
+
+.text-header { margin-bottom: 5px; font-size: 6em; text-shadow: -1px 9px 0 #000 }
 
 .text-loud { font-size: 5em }
 
